@@ -13,4 +13,4 @@ class Ready extends Listener {
     }
 }
 
-module.exports = Ready
+module.exports = Ready;

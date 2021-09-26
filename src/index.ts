@@ -12,7 +12,7 @@ class MyClient extends AkairoClient {
     constructor() {
         super(
             {
-                ownerID: '214679214698'
+                ownerID: '570243143958528010'
             },
             {
                 intents: [ Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES ]
@@ -21,10 +21,6 @@ class MyClient extends AkairoClient {
 
         this.commandHandler = new CommandHandler(this, {
             prefix: '.',
-            blockBots: true,
-            blockClient: true,
-            allowMention: true,
-            defaultCooldown: 500,
             commandUtil: true,
             directory: join(__dirname, 'commands')
         })
@@ -36,10 +32,6 @@ class MyClient extends AkairoClient {
         this.commandHandler.useListenerHandler(this.listenerHandler)
         this.listenerHandler.loadAll()
         this.commandHandler.loadAll()
-
-        this.on('debug', (info: string) => {
-            console.log(info)
-        })
     }
 }
 
