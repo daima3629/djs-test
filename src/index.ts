@@ -20,7 +20,7 @@ class MyClient extends AkairoClient {
         );
 
         this.commandHandler = new CommandHandler(this, {
-            prefix: '.',
+            prefix: '!!',
             commandUtil: true,
             directory: join(__dirname, 'commands')
         })
@@ -32,6 +32,10 @@ class MyClient extends AkairoClient {
         this.commandHandler.useListenerHandler(this.listenerHandler)
         this.listenerHandler.loadAll()
         this.commandHandler.loadAll()
+
+        this.commandHandler.on("messageInvalid", (message) => {
+            console.log(message.content)
+        })
     }
 }
 
