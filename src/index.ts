@@ -3,8 +3,6 @@ import { config } from "dotenv";
 
 config();
 
-const client = new MyClient();
-
-module.exports.myclient = client
+export const client = new MyClient();
 
 client.login(process.env.DISCORD_TOKEN)

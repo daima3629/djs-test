@@ -21,16 +21,16 @@ export class MyClient extends AkairoClient {
             prefix: '!!',
             commandUtil: true,
             directory: join(__dirname, 'commands')
-        })
+        });
 
         this.listenerHandler = new ListenerHandler(this, {
             directory: join(__dirname, 'listeners')
-        })
+        });
 
-        this.commandHandler.useListenerHandler(this.listenerHandler)
-        this.listenerHandler.loadAll()
-        this.commandHandler.loadAll()
+        this.commandHandler.useListenerHandler(this.listenerHandler);
+        this.listenerHandler.loadAll();
+        this.commandHandler.loadAll();
 
-        this.buttons = new Array()
+        this.buttons = new Array();
     }
 }

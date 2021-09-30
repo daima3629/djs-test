@@ -5,11 +5,11 @@ class Ready extends Listener {
         super('ready', {
             event: 'ready',
             emitter: 'client'
-        })
+        });
     }
 
     exec() {
-        console.log(`Logged in as ${this.client.user?.tag}`)
+        console.log(`Logged in as ${this.client.user?.tag}`);
     }
 }
 
