@@ -17,6 +17,8 @@ export class MyClient extends AkairoClient {
             }
         );
 
+        this.buttons = new Array();
+
         this.commandHandler = new CommandHandler(this, {
             prefix: '!!',
             commandUtil: true,
@@ -30,7 +32,5 @@ export class MyClient extends AkairoClient {
         this.commandHandler.useListenerHandler(this.listenerHandler);
         this.listenerHandler.loadAll();
         this.commandHandler.loadAll();
-
-        this.buttons = new Array();
     }
 }

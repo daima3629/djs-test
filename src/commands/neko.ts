@@ -4,7 +4,7 @@ import { MyClient } from "../client"
 import { client } from "../index" 
 
 class Neko extends Command {
-    myClient: MyClient
+    client: MyClient
 
     constructor() {
         super('neko', {
@@ -14,7 +14,7 @@ class Neko extends Command {
             }
         })
 
-        this.myClient = client;
+        this.client = client;
     }
 
     async exec(message: Message) {
@@ -22,7 +22,7 @@ class Neko extends Command {
             .setLabel('認証')
             .setStyle(1)
             .setCustomId(message.guild?.id as string)
-        this.myClient.buttons.push(button.customId as string);
+        this.client.buttons.push(button.customId as string);
         message.channel.send({
             content: 'にゃーん',
             components: [new MessageActionRow({
